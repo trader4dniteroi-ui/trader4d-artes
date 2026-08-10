@@ -1,0 +1,1 @@
+﻿# Trader4D - Artes
