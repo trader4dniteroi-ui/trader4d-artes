@@ -77,6 +77,41 @@ Conteúdo educacional. Não é recomendação de investimento.
 #forex #forexbrasil #daytrade #priceaction #smc #wyckoff
 #gestaoderisco #educacaofinanceira`
   },
+  'forex-aula-03': {
+    caption: `Não saber o tamanho do lote pode destruir seu patrimônio.
+
+Lote é o volume que você está operando — padrão, mini ou micro.
+Ele não muda sua análise. Muda sua conta.
+
+Pip é a menor variação padrão do preço.
+No EUR/USD, 1 pip = 0,0001.
+No lote padrão isso equivale a cerca de US$ 10 por pip.
+
+Spread é a diferença entre o preço de compra e de venda.
+Toda operação nasce com esse custo já pago.
+
+Alavancagem não aumenta sua chance.
+Aumenta o tamanho das duas pontas — do acerto e do erro.
+Não é bônus. É multiplicador de exposição.
+
+A pergunta certa não é "quantos lotes eu abro?"
+A pergunta certa é: "quantos % da minha conta eu aceito perder nessa operação?"
+
+Antes de definir o tamanho:
+1) Onde está o meu stop, em pips?
+2) Quanto isso representa em % do meu patrimônio?
+3) Esse número me deixa confortável para deixar a operação andar?
+
+Na Trader4D você não assiste — a gente te ensina e opera com você nos dois mercados, B3 e Forex, na sala ao vivo todos os dias.
+Depois você escolhe qual cabe na sua rotina.
+
+📍 Escola presencial no Centro de Niterói/RJ
+🤝 Parceria oficial Hantec Markets
+
+Conteúdo educacional. Não é recomendação de investimento.
+
+#forex #priceaction #gestaoderisco #daytrade #niteroi`
+  },
   'prova-social-01': {
     caption: `Não sou eu quem diz. São 41 pessoas.
 
