@@ -76,7 +76,7 @@ async function exec(slug, args) {
   return d.data;
 }
 
-async function publish(folder, name) {
+async function publish(folder, name, scheduledTime = null) {
   console.log(`\n=== ${name} ===`);
   const slides = Array.from({length: 8}, (_, i) => `${BASE_URL}/${folder}/slide-${String(i+1).padStart(2, '0')}.png`);
 
@@ -100,21 +100,31 @@ async function publish(folder, name) {
   });
   console.log(`   draft id: ${carousel.id}`);
 
-  console.log('3. Publicando...');
-  const post = await exec('INSTAGRAM_CREATE_POST', {
+  console.log(scheduledTime ? '3. Agendando...' : '3. Publicando...');
+  const args = {
     ig_user_id: IG_USER_ID,
     creation_id: carousel.id
-  });
-  console.log(`   ✅ publicado: ${post.id}`);
+  };
+  if (scheduledTime) {
+    const ts = Math.floor(new Date(scheduledTime).getTime() / 1000);
+    if (isNaN(ts)) throw new Error(`data inválida: "${scheduledTime}". use formato "YYYY-MM-DD HH:mm"`);
+    args.scheduled_publish_time = ts;
+    console.log(`   para ${scheduledTime}`);
+  }
+  const post = await exec('INSTAGRAM_CREATE_POST', args);
+  console.log(`   ✅ ${scheduledTime ? 'agendado' : 'publicado'}: ${post.id}`);
   return post.id;
 }
 
-// Modo de uso: node ig-publish-auto.mjs [folder] ou sem arg pra listar
+// Modo de uso: node ig-publish.mjs <folder> [data-hora]
 const arg = process.argv[2];
+const dataHora = process.argv[3];
 if (!arg || arg === '--help') {
-  console.log('Uso: node ig-publish-auto.mjs <folder>\n');
+  console.log('Uso: node ig-publish.mjs <folder> [data-hora]\n');
   console.log('Pastas disponíveis:');
   Object.keys(posts).forEach(f => console.log(`  ${f}`));
+  console.log('\nExemplo com agendamento:');
+  console.log('  node ig-publish.mjs forex-aula-02 "2026-08-20 09:00"');
   process.exit(0);
 }
 
@@ -125,8 +135,8 @@ if (!posts[arg]) {
 }
 
 try {
-  await publish(arg, posts[arg].caption.split('\n')[0]);
-  console.log('\n✅ publicação completa!\n');
+  await publish(arg, posts[arg].caption.split('\n')[0], dataHora);
+  console.log('\n✅ ' + (dataHora ? 'agendamento completo' : 'publicação completa') + '!\n');
 } catch (e) {
   console.error('\n❌ erro:', e.message, '\n');
   process.exit(1);
