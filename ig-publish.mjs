@@ -40,6 +40,43 @@ Conteúdo educacional. Não é recomendação de investimento.
 #forex #forexbrasil #daytrade #priceaction #smc #wyckoff
 #gestaoderisco #educacaofinanceira`
   },
+  'forex-aula-02': {
+    caption: `Você nunca comprou euro. Você comprou uma comparação.
+
+EUR/USD = quanto de dólar custa 1 euro.
+Não é um ativo. É a relação entre duas moedas.
+
+BASE (esquerda): o que você compra ou vende.
+COTADA (direita): com o que você paga.
+
+Por que o preço sobe? Duas causas diferentes, o mesmo movimento na tela:
+— A base fortalece
+— ou A cotada enfraquece
+
+Saber qual das duas muda a leitura inteira.
+
+Os mais negociados:
+EUR/USD · GBP/USD · USD/JPY
+
+São os de maior volume — e por isso os de spread mais baixo.
+
+Antes de abrir qualquer par, pergunte:
+1) Qual é a base e qual é a cotada?
+2) O movimento vem da força de uma ou da fraqueza da outra?
+3) Que sessão está aberta para esse par agora?
+
+Na Trader4D você não assiste — a gente te ensina e opera com você nos dois mercados, B3 e Forex, na sala ao vivo todos os dias.
+Depois você escolhe qual cabe na sua rotina.
+
+📍 Escola presencial no Centro de Niterói/RJ
+🤝 Parceria oficial Hantec Markets
+
+Conteúdo educacional. Não é recomendação de investimento.
+
+#daytradeniteroi #niteroi #niteroirj #centrodeniteroi #saogoncalo
+#forex #forexbrasil #daytrade #priceaction #smc #wyckoff
+#gestaoderisco #educacaofinanceira`
+  },
   'prova-social-01': {
     caption: `Não sou eu quem diz. São 41 pessoas.
 
