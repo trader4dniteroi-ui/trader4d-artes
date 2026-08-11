@@ -112,6 +112,72 @@ Conteúdo educacional. Não é recomendação de investimento.
 
 #forex #priceaction #gestaoderisco #daytrade #niteroi`
   },
+  'forex-aula-04': {
+    caption: `Seu stop não foi azar. Ele estava junto com o de milhares.
+
+Onde todo mundo põe stop?
+Comprado? Stop abaixo do fundo.
+Vendido? Stop acima do topo.
+
+Esses são os níveis óbvios. E quando todos colocam no óbvio, o preço sabe onde vai buscar liquidity.
+
+Liquidez é o volume — é gente vendendo ou comprando.
+
+Quando o preço está no extremo de uma faixa, todo trader aciona o stop.
+Aquele aglomerado de ordens é o que cria a liquidez.
+
+Wyckoff chama isso de Spring (pra cima) ou Upthrust (pra baixo).
+ICT chama de Liquidity Sweep.
+
+É o padrão observado com frequência — não é regra, não acontece sempre.
+
+Mas quando você sabe onde está a concentração de stops, você deixa de ser surpreso.
+
+Na Trader4D você não assiste — a gente te ensina e opera com você nos dois mercados, B3 e Forex, na sala ao vivo todos os dias.
+Depois você escolhe qual cabe na sua rotina.
+
+📍 Escola presencial no Centro de Niterói/RJ
+🤝 Parceria oficial Hantec Markets
+
+Conteúdo educacional. Não é recomendação de investimento.
+
+#forex #priceaction #wyckoff #smc #niteroi`
+  },
+  'forex-aula-05-sessoes': {
+    caption: `Você não chegou atrasado. Você chegou na fase errada.
+
+O mercado de moedas não tem um expediente único — tem três:
+
+ÁSIA (Tóquio, 20h de segunda até 9h de terça, horário de Brasília)
+A abertura. O mercado aquecendo.
+
+LONDRES (Londres, 2h até 12h, horário de Brasília)
+A sobreposição. Londres cruza com Ásia em queda, depois encontra Nova York em abertura.
+O maior volume acontece aqui — é quando dois mercados gigantes estão abertos simultaneamente.
+
+NOVA YORK (Nova York, 9h em diante, horário de Brasília)
+O encerramento. O dia fechando força.
+
+Em Wyckoff, toda estrutura tem fases:
+Accumulation (os grandes acumulando)
+Markup (disparada)
+Distribution (distribuindo força)
+Markdown (queda)
+
+Você não escolhe qual fase vai ver. A hora do dia escolhe pra você.
+
+Saber qual sessão está aberta significa entender qual fase do ciclo o preço está vivendo.
+
+Na Trader4D você não assiste — a gente te ensina e opera com você nos dois mercados, B3 e Forex, na sala ao vivo todos os dias.
+Depois você escolhe qual cabe na sua rotina.
+
+📍 Escola presencial no Centro de Niterói/RJ
+🤝 Parceria oficial Hantec Markets
+
+Conteúdo educacional. Não é recomendação de investimento.
+
+#forex #priceaction #wyckoff #smc #niteroi`
+  },
   'prova-social-01': {
     caption: `Não sou eu quem diz. São 41 pessoas.
 
