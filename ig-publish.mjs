@@ -238,19 +238,19 @@ async function publish(folder, name, scheduledTime = null) {
   });
   console.log(`   draft id: ${carousel.id}`);
 
-  console.log(scheduledTime ? '3. Agendando...' : '3. Publicando...');
+  console.log('3. Criando como DRAFT...');
   const args = {
     ig_user_id: IG_USER_ID,
-    creation_id: carousel.id
+    creation_id: carousel.id,
+    publish: false
   };
   if (scheduledTime) {
     const ts = Math.floor(new Date(scheduledTime).getTime() / 1000);
     if (isNaN(ts)) throw new Error(`data inválida: "${scheduledTime}". use formato "YYYY-MM-DD HH:mm"`);
-    args.scheduled_publish_time = ts;
-    console.log(`   para ${scheduledTime}`);
+    console.log(`   para agendar em: ${scheduledTime}`);
   }
   const post = await exec('INSTAGRAM_CREATE_POST', args);
-  console.log(`   ✅ ${scheduledTime ? 'agendado' : 'publicado'}: ${post.id}`);
+  console.log(`   ✅ draft criado (revise no Instagram antes de publicar): ${post.id}`);
   return post.id;
 }
 
