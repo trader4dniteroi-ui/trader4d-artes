@@ -1,5 +1,8 @@
 import fs from 'fs';
-
+const env = fs.readFileSync('C:/Users/fbrun/Documents/KPA-WINDOWS/KPA-WINDOWS/v31/.env.local', 'utf8');
+const apiKey = (env.match(/^COMPOSIO_API_KEY=(.*)$/m) || [])[1].trim();
+const IG_USER_ID = '17841450152321296';
+const USER_ID = 'local_owner_eb009dff323c974b';
 const BASE_URL = 'https://trader4dniteroi-ui.github.io/trader4d-artes';
 
 const posts = {
@@ -173,14 +176,55 @@ Conteúdo educacional. Não é recomendação de investimento.
   }
 };
 
-// Modo de uso: node ig-publish.mjs <folder>
+async function exec(slug, args) {
+  const r = await fetch(`https://backend.composio.dev/api/v3/tools/execute/${slug}`, {
+    method: 'POST',
+    headers: { 'x-api-key': apiKey, 'content-type': 'application/json' },
+    body: JSON.stringify({ user_id: USER_ID, arguments: args })
+  });
+  const d = await r.json();
+  if (!d.successful) throw new Error(`${slug}: ${JSON.stringify(d)}`);
+  return d.data;
+}
+
+async function publish(folder, name) {
+  console.log(`\n=== ${name} ===`);
+  const slides = Array.from({length: 8}, (_, i) => `${BASE_URL}/${folder}/slide-${String(i+1).padStart(2, '0')}.png`);
+
+  console.log('1. Uploadando imagens...');
+  const children = [];
+  for (let i = 0; i < slides.length; i++) {
+    const r = await exec('INSTAGRAM_CREATE_MEDIA_CONTAINER', {
+      ig_user_id: IG_USER_ID,
+      image_url: slides[i],
+      content_type: 'carousel_item'
+    });
+    children.push(r.id);
+    console.log(`   slide ${i+1}/8 ✓`);
+  }
+
+  console.log('2. Montando carrossel...');
+  const carousel = await exec('INSTAGRAM_CREATE_CAROUSEL_CONTAINER', {
+    ig_user_id: IG_USER_ID,
+    children: children,
+    caption: posts[folder].caption
+  });
+  console.log(`   draft id: ${carousel.id}`);
+
+  console.log('3. Publicando...');
+  const post = await exec('INSTAGRAM_CREATE_POST', {
+    ig_user_id: IG_USER_ID,
+    creation_id: carousel.id
+  });
+  console.log(`   ✅ publicado: ${post.id}`);
+  return post.id;
+}
+
 const arg = process.argv[2];
 if (!arg || arg === '--help') {
   console.log('Uso: node ig-publish.mjs <folder>\n');
   console.log('Pastas disponíveis:');
   Object.keys(posts).forEach(f => console.log(`  ${f}`));
-  console.log('\nExemplo:');
-  console.log('  node ig-publish.mjs forex-aula-02');
   process.exit(0);
 }
 
@@ -190,21 +234,10 @@ if (!posts[arg]) {
   process.exit(1);
 }
 
-console.log(`\n=== ${posts[arg].caption.split('\n')[0]} ===\n`);
-console.log('IMAGENS:');
-for (let i = 1; i <= 8; i++) {
-  const url = `${BASE_URL}/${arg}/slide-${String(i).padStart(2, '0')}.png`;
-  console.log(`  Slide ${i}: ${url}`);
+try {
+  await publish(arg, posts[arg].caption.split('\n')[0]);
+  console.log('\n✅ publicacao completa!\n');
+} catch (e) {
+  console.error('\n❌ erro:', e.message, '\n');
+  process.exit(1);
 }
-console.log('\n' + '='.repeat(60));
-console.log('LEGENDA PARA O INSTAGRAM:');
-console.log('='.repeat(60) + '\n');
-console.log(posts[arg].caption);
-console.log('\n' + '='.repeat(60));
-console.log('\nPRÓXIMOS PASSOS:');
-console.log('1. Copie as imagens acima');
-console.log('2. Vá para https://business.facebook.com/ (Meta Business Suite)');
-console.log('3. Crie novo post no Instagram');
-console.log('4. Faça upload das 8 imagens como carrossel');
-console.log('5. Cole a legenda acima');
-console.log('6. Agende ou publique conforme desejar\n');
