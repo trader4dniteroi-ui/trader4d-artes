@@ -1,8 +1,5 @@
 import fs from 'fs';
-const env = fs.readFileSync('C:/Users/fbrun/Documents/KPA-WINDOWS/KPA-WINDOWS/v31/.env.local', 'utf8');
-const apiKey = (env.match(/^COMPOSIO_API_KEY=(.*)$/m) || [])[1].trim();
-const IG_USER_ID = '17841450152321296';
-const USER_ID = 'local_owner_eb009dff323c974b';
+
 const BASE_URL = 'https://trader4dniteroi-ui.github.io/trader4d-artes';
 
 const posts = {
@@ -36,9 +33,7 @@ Depois você escolhe qual cabe na sua rotina.
 
 Conteúdo educacional. Não é recomendação de investimento.
 
-#daytradeniteroi #niteroi #niteroirj #centrodeniteroi #saogoncalo
-#forex #forexbrasil #daytrade #priceaction #smc #wyckoff
-#gestaoderisco #educacaofinanceira`
+#daytradeniteroi #niteroi #niteroirj #centrodeniteroi #saogoncalo`
   },
   'forex-aula-02': {
     caption: `Você nunca comprou euro. Você comprou uma comparação.
@@ -73,9 +68,7 @@ Depois você escolhe qual cabe na sua rotina.
 
 Conteúdo educacional. Não é recomendação de investimento.
 
-#daytradeniteroi #niteroi #niteroirj #centrodeniteroi #saogoncalo
-#forex #forexbrasil #daytrade #priceaction #smc #wyckoff
-#gestaoderisco #educacaofinanceira`
+#daytradeniteroi #niteroi #niteroirj #centrodeniteroi #saogoncalo`
   },
   'forex-aula-03': {
     caption: `Não saber o tamanho do lote pode destruir seu patrimônio.
@@ -177,92 +170,17 @@ Depois você escolhe qual cabe na sua rotina.
 Conteúdo educacional. Não é recomendação de investimento.
 
 #forex #priceaction #wyckoff #smc #niteroi`
-  },
-  'prova-social-01': {
-    caption: `Não sou eu quem diz. São 41 pessoas.
-
-5,0 de 5 avaliações no Google — 41 pessoas verificadas.
-Sala 318 · Centro de Niterói/RJ
-
-"Fiz o curso com a equipe junto dele uns anos atrás e até hj ele me atende com a mesma atenção e humildade de sempre."
-
-"Eu já fiz muitos cursos, mais esse é diferenciado — é o top do top melhor conteúdo que você vai ver."
-
-"Sou grata não só pelo ensino, mas também pela paciência, dedicação e vontade que tem de ver os alunos alcançarem seus objetivos."
-
-Conta verificada pela Meta.
-
-Vem conhecer a sala.
-
-Na Trader4D você não assiste — a gente te ensina e opera com você nos dois mercados, B3 e Forex.
-
-📍 Centro de Niterói/RJ
-👇 Link na bio
-
-#daytradeniteroi #niteroi #reviews #proveesocial #trader4d`
   }
 };
 
-async function exec(slug, args) {
-  const r = await fetch(`https://backend.composio.dev/api/v3/tools/execute/${slug}`, {
-    method: 'POST',
-    headers: { 'x-api-key': apiKey, 'content-type': 'application/json' },
-    body: JSON.stringify({ user_id: USER_ID, arguments: args })
-  });
-  const d = await r.json();
-  if (!d.successful) throw new Error(`${slug}: ${JSON.stringify(d)}`);
-  return d.data;
-}
-
-async function publish(folder, name, scheduledTime = null) {
-  console.log(`\n=== ${name} ===`);
-  const slides = Array.from({length: 8}, (_, i) => `${BASE_URL}/${folder}/slide-${String(i+1).padStart(2, '0')}.png`);
-
-  console.log('1. Uploadando imagens...');
-  const children = [];
-  for (let i = 0; i < slides.length; i++) {
-    const r = await exec('INSTAGRAM_CREATE_MEDIA_CONTAINER', {
-      ig_user_id: IG_USER_ID,
-      image_url: slides[i],
-      content_type: 'carousel_item'
-    });
-    children.push(r.id);
-    console.log(`   slide ${i+1}/8 ✓`);
-  }
-
-  console.log('2. Montando carrossel...');
-  const carousel = await exec('INSTAGRAM_CREATE_CAROUSEL_CONTAINER', {
-    ig_user_id: IG_USER_ID,
-    children: children,
-    caption: posts[folder].caption
-  });
-  console.log(`   draft id: ${carousel.id}`);
-
-  console.log('3. Criando como DRAFT...');
-  const args = {
-    ig_user_id: IG_USER_ID,
-    creation_id: carousel.id,
-    publish: false
-  };
-  if (scheduledTime) {
-    const ts = Math.floor(new Date(scheduledTime).getTime() / 1000);
-    if (isNaN(ts)) throw new Error(`data inválida: "${scheduledTime}". use formato "YYYY-MM-DD HH:mm"`);
-    console.log(`   para agendar em: ${scheduledTime}`);
-  }
-  const post = await exec('INSTAGRAM_CREATE_POST', args);
-  console.log(`   ✅ draft criado (revise no Instagram antes de publicar): ${post.id}`);
-  return post.id;
-}
-
-// Modo de uso: node ig-publish.mjs <folder> [data-hora]
+// Modo de uso: node ig-publish.mjs <folder>
 const arg = process.argv[2];
-const dataHora = process.argv[3];
 if (!arg || arg === '--help') {
-  console.log('Uso: node ig-publish.mjs <folder> [data-hora]\n');
+  console.log('Uso: node ig-publish.mjs <folder>\n');
   console.log('Pastas disponíveis:');
   Object.keys(posts).forEach(f => console.log(`  ${f}`));
-  console.log('\nExemplo com agendamento:');
-  console.log('  node ig-publish.mjs forex-aula-02 "2026-08-20 09:00"');
+  console.log('\nExemplo:');
+  console.log('  node ig-publish.mjs forex-aula-02');
   process.exit(0);
 }
 
@@ -272,10 +190,21 @@ if (!posts[arg]) {
   process.exit(1);
 }
 
-try {
-  await publish(arg, posts[arg].caption.split('\n')[0], dataHora);
-  console.log('\n✅ ' + (dataHora ? 'agendamento completo' : 'publicação completa') + '!\n');
-} catch (e) {
-  console.error('\n❌ erro:', e.message, '\n');
-  process.exit(1);
+console.log(`\n=== ${posts[arg].caption.split('\n')[0]} ===\n`);
+console.log('IMAGENS:');
+for (let i = 1; i <= 8; i++) {
+  const url = `${BASE_URL}/${arg}/slide-${String(i).padStart(2, '0')}.png`;
+  console.log(`  Slide ${i}: ${url}`);
 }
+console.log('\n' + '='.repeat(60));
+console.log('LEGENDA PARA O INSTAGRAM:');
+console.log('='.repeat(60) + '\n');
+console.log(posts[arg].caption);
+console.log('\n' + '='.repeat(60));
+console.log('\nPRÓXIMOS PASSOS:');
+console.log('1. Copie as imagens acima');
+console.log('2. Vá para https://business.facebook.com/ (Meta Business Suite)');
+console.log('3. Crie novo post no Instagram');
+console.log('4. Faça upload das 8 imagens como carrossel');
+console.log('5. Cole a legenda acima');
+console.log('6. Agende ou publique conforme desejar\n');
