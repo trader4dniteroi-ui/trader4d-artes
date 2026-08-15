@@ -139,6 +139,31 @@ Conteúdo educacional. Não é recomendação de investimento.
 
 #forex #priceaction #wyckoff #smc #niteroi`
   },
+  'prop-trading-intro': {
+    caption: `Você teria mais segurança com capital cedido?
+
+Mesa proprietária Hantec Trader: você opera com capital da corretora.
+
+PLANOS:
+5K → US$ 18,85/mês
+25K → US$ 70,85/mês
+100K → US$ 194,35/mês
+
+Todos com cupom exclusivo Trader4D.
+
+Max Loss: 8% | Profit Target: 6%
+
+BÔNUS: 100% no primeiro depósito (exclusivo alunos Trader4D)
+
+Comece de forma segura. Escale conforme prova lucro.
+
+📍 Escola presencial no Centro de Niterói/RJ
+🤝 Parceria oficial Hantec Markets
+
+Conteúdo educacional. Não é recomendação de investimento.
+
+#proptrading #propriarytradingdesk #forex #mesaproprietaria #trader4d`
+  },
   'forex-aula-05-sessoes': {
     caption: `Você não chegou atrasado. Você chegou na fase errada.
 
