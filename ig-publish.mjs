@@ -140,29 +140,53 @@ Conteúdo educacional. Não é recomendação de investimento.
 #forex #priceaction #wyckoff #smc #niteroi`
   },
   'prop-trading-intro': {
-    caption: `Você teria mais segurança com capital cedido?
+    caption: `Duas formas de operar Forex. Qual é a sua?
 
-Mesa proprietária Hantec Trader: você opera com capital da corretora.
+CONTA REAL (Seu Capital)
+Você deposita. Você opera. Você lucra 100%.
 
-PLANOS:
-5K → US$ 18,85/mês
-25K → US$ 70,85/mês
-100K → US$ 194,35/mês
+✓ Liberdade total: opere como quiser
+✓ Seu capital cresce inteiro
+✓ Sem contrato ou exclusividade
 
-Todos com cupom exclusivo Trader4D.
+✗ Risco é 100% seu
+✗ Precisa de capital inicial (US$ 100+)
+✗ Alavancagem custa financing fee
 
-Max Loss: 8% | Profit Target: 6%
+---
 
-BÔNUS: 100% no primeiro depósito (exclusivo alunos Trader4D)
+MESA PROPRIETÁRIA (Capital da Hantec)
+Você paga o plano. Hantec cede capital. Lucro dividido.
 
-Comece de forma segura. Escale conforme prova lucro.
+✓ Risco controlado (Max Loss 8%)
+✓ Começa com US$ 18,85/mês
+✓ Sem financing fee cara
+✓ Capital escalável (prova lucro, sobe limite)
 
-📍 Escola presencial no Centro de Niterói/RJ
+✗ Lucro dividido
+✗ Regras de operação mais rígidas
+✗ Contrato exclusivo
+
+---
+
+A METODOLOGIA É A MESMA
+Wyckoff. SMC. ICT.
+
+Você opera Forex da mesma forma nos dois modelos.
+A diferença é o capital que você tem à disposição
+e o risco que você carrega.
+
+Na Trader4D você aprende OS DOIS.
+Você testa OS DOIS.
+Depois você escolhe qual faz sentido pro seu patrimônio.
+
+📍 Centro de Niterói/RJ
 🤝 Parceria oficial Hantec Markets
+🎯 Aula experimental GRÁTIS
 
 Conteúdo educacional. Não é recomendação de investimento.
 
-#proptrading #propriarytradingdesk #forex #mesaproprietaria #trader4d`
+#forex #forexbrasil #mesaproprietaria #contapropria #priceaction #trader4d`
   },
   'forex-aula-05-sessoes': {
     caption: `Você não chegou atrasado. Você chegou na fase errada.
