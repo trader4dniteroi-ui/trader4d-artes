@@ -188,6 +188,35 @@ Conteúdo educacional. Não é recomendação de investimento.
 
 #forex #forexbrasil #mesaproprietaria #contapropria #priceaction #trader4d`
   },
+  'mesa-proprietaria': {
+    caption: `Existe uma forma de operar um capital que não é seu. Chama-se mesa proprietária.
+
+Mesa proprietária é uma empresa que coloca o próprio capital na mão de traders. Ela não vive de mensalidade de curso: ela ganha quando o trader opera bem, porque divide o resultado com ele. O interesse dos dois lados é o mesmo.
+
+COMO SE ENTRA
+Você escolhe o tamanho da conta que quer operar — de 5K a 200K — e passa por uma avaliação. Nela a mesa quer ver duas coisas: que você alcança a meta de lucro de 6% e que faz isso sem estourar a perda máxima de 8%. E não existe prazo. Você pode levar uma semana ou três meses. O que está sendo medido é consistência, não velocidade.
+
+O QUE MUDA DEPOIS DA APROVAÇÃO
+Você passa a operar o capital da mesa e fica com a maior parte do resultado: a remuneração do trader começa em 80% e pode chegar a 95%. O capital exposto é da mesa. O seu compromisso é com o processo.
+
+POR QUE A MAIORIA NÃO PASSA
+Não é falta de técnica. É abandonar o plano que o próprio trader escreveu — aumenta o lote fora da hora, tira o stop, tenta recuperar tudo no mesmo dia. A avaliação não testa se você sabe analisar o gráfico. Testa se você consegue seguir a sua própria regra com dinheiro na frente.
+
+É por isso que a preparação vem antes da conta.
+
+Na Trader4D você não assiste — a gente te ensina e opera com você nos dois mercados, B3 e Forex, na sala ao vivo todos os dias.
+
+O plano de mesa sai com o cupom exclusivo da Trader4D. Chama no WhatsApp que eu te explico qual tamanho de conta faz sentido pro seu momento.
+
+📍 Escola presencial no Centro de Niterói/RJ
+🤝 Parceria oficial Hantec Markets
+
+👇 Você já tentou uma avaliação de mesa, ou ainda está montando seu plano?
+
+Conteúdo educacional. Não é recomendação de investimento.
+
+#mesaproprietaria #proptrading #forex #daytradeniteroi #niteroi #centrodeniteroi #saogoncalo`
+  },
   'forex-aula-05-sessoes': {
     caption: `Você não chegou atrasado. Você chegou na fase errada.
 

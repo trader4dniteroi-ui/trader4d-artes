@@ -14,10 +14,13 @@ echo 2 - Aula 02 O par de moedas
 echo 3 - Aula 03 Lote spread e alavancagem
 echo 4 - Aula 04 Liquidez
 echo 5 - Aula 05 As 3 Sessoes
+echo 6 - Mesa Proprietaria (Hantec)
 echo.
-set /p opcao="Digite o numero (1-5): "
+set /p opcao="Digite o numero (1-6): "
 
-if "%opcao%"=="1" (set folder=forex-aula-01) else if "%opcao%"=="2" (set folder=forex-aula-02) else if "%opcao%"=="3" (set folder=forex-aula-03) else if "%opcao%"=="4" (set folder=forex-aula-04) else if "%opcao%"=="5" (set folder=forex-aula-05-sessoes) else (echo Opcao invalida! & timeout /t 2 & goto fim)
+if "%opcao%"=="1" (set folder=forex-aula-01) else if "%opcao%"=="2" (set folder=forex-aula-02) else if "%opcao%"=="3" (set folder=forex-aula-03) else if "%opcao%"=="4" (set folder=forex-aula-04) else if "%opcao%"=="5" (set folder=forex-aula-05-sessoes) else if "%opcao%"=="6" (set folder=mesa-proprietaria) else (echo Opcao invalida! & timeout /t 2 & goto fim)
+
+cd C:\Users\fbrun\trader4d-artes
 
 cls
 echo.
